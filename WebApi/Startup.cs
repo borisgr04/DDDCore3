@@ -32,6 +32,7 @@ namespace WebApi
             services.AddDbContext<BancoContext>
                 (opt => opt.UseSqlServer("Server=.\\;Database=Banco;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
+            ///Inyección de dependencia Especifica
             //https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0#register-additional-services-with-extension-methods
             services.AddScoped<IUnitOfWork, UnitOfWork>(); //Se Instancia un peticion
             services.AddScoped<IDbContext, BancoContext>(); //Se Instancia un peticion
