@@ -20,7 +20,7 @@ namespace Domain.Contracts
 
         IEnumerable<T> GetAll();
 
-        T FindFirstOrDefault(Expression<Func<T, bool>> predicate)
+        T FindFirstOrDefault(Expression<Func<T, bool>> predicate);
 
         IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
 

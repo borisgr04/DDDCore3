@@ -15,11 +15,10 @@ namespace Application
         }
         public ConsignarResponse Ejecutar(ConsignarRequest request)
         {
-            CuentaBancaria cuenta = _unitOfWork.CuentaBancariaRepository.FindFirstOrDefault(t => t.Numero==request.NumeroCuenta);
+            var cuenta = _unitOfWork.CuentaBancariaRepository.FindFirstOrDefault(t => t.Numero==request.NumeroCuenta);
             if (cuenta != null)
             {
                 cuenta.Consignar(request.Valor);
-                //_unitOfWork.CuentaBancariaRepository.Edit(cuenta);
                 _unitOfWork.Commit();
                 return new ConsignarResponse() { Mensaje = $"Su Nuevo saldo es {cuenta.Saldo}." };
             }

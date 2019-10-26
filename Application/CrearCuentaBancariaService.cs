@@ -24,7 +24,7 @@ namespace Application
                 cuentaNueva.Numero = request.Numero;
                 _unitOfWork.CuentaBancariaRepository.Add(cuentaNueva);
                 _unitOfWork.Commit();
-                return new CrearCuentaBancariaResponse() { Mensaje = $"Se creo con exito la cuenta  {cuentaNueva.Numero}." };
+                return new CrearCuentaBancariaResponse() { Mensaje = $"Se creó con exito la cuenta {cuentaNueva.Numero}." };
             }
             else
             {

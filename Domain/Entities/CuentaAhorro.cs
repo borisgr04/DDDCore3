@@ -8,7 +8,6 @@ namespace Domain.Entities
     {
         public const double TOPERETIRO = 1000;
 
-
         public override void Retirar(double valor)
         {
             double nuevoSaldo = Saldo - valor;
