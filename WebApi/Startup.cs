@@ -30,6 +30,8 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             services.AddDbContext<BancoContext>
                 (opt => opt.UseSqlServer("Server=.\\;Database=Banco;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
@@ -82,7 +84,7 @@ namespace WebApi
 
             app.UseAuthorization();
 
-            #region 
+            #region Activar SwaggerUI
             app.UseSwagger();
             app.UseSwaggerUI(
                 options =>
